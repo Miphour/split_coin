@@ -1,4 +1,4 @@
-# 🪙 Split Coin
+# [🪙 Split Coin](https://splitcoin.streamlit.app/)
 
 Aplicação web responsiva para divisão justa e auditável de despesas em grupo, desenvolvida em **Python (Streamlit)** com backend relacional e autenticação via **Supabase (PostgreSQL)**.
 
