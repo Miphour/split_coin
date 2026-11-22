@@ -253,7 +253,7 @@ def tela_autenticacao(sb: Client):
     st.caption("Divisão simples e justa de despesas em grupo.")
 
     aba_login, aba_cadastro, aba_recuperar = st.tabs(
-        ["Entrar", "Criar Conta", "Esqueci a Senha (beta)"]
+        ["Entrar", "Criar Conta", "Esqueci a Senha (teste)"]
     )
 
     with aba_login:
