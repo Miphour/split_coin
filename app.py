@@ -253,7 +253,7 @@ def tela_autenticacao(sb: Client):
     st.caption("Divisão simples e justa de despesas em grupo.")
 
     aba_login, aba_cadastro, aba_recuperar = st.tabs(
-        ["Entrar", "Criar Conta", "Esqueci a Senha"]
+        ["Entrar", "Criar Conta", "Esqueci a Senha (beta)"]
     )
 
     with aba_login:
@@ -326,16 +326,14 @@ def tela_autenticacao(sb: Client):
                         st.error(f"Erro ao criar conta: {e}")
 
     with aba_recuperar:
+        st.caption("Função em fase de testes. Caso precise redefinir sua senha, solicite ao proprietário do sistema.")
         with st.form("form_recuperar"):
             email_rec = st.text_input("E-mail cadastrado")
-            if st.form_submit_button("Enviar link de redefinição", use_container_width=True):
-                try:
-                    sb.auth.reset_password_for_email(email_rec.strip())
-                    st.success("Se o e-mail estiver cadastrado, enviamos um link de recuperação.")
-                except Exception as e:
-                    st.error(f"Erro ao solicitar recuperação: {e}")
-
-
+            st.form_submit_button(
+                "Enviar link de redefinição",
+                use_container_width=True,
+                disabled=True,
+            )
 def render_painel_master(sb: Client, user: dict):
     st.subheader("⚡ Painel Master do Proprietário")
     st.caption("Aprovação de cadastros, controle global de usuários, senhas e grupos.")
